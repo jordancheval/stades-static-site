@@ -1,0 +1,22 @@
+{
+  "name": "stades-static-site",
+  "description": "Site statique d'annuaire de stades",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "clean": "rm -rf ./public",
+    "prebuild": "npm run clean && node ./scripts/TelechargerDonnees.js",
+    "build": "eleventy",
+    "postbuild": "rm -rf ./data",
+    "prestart": "npm run prebuild",
+    "start": "eleventy --serve",
+    "poststart": "npm run postbuild"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "install": "^0.13.0"
+  }
+}
