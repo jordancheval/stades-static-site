@@ -1,0 +1,1 @@
+# stades-static-site
