@@ -12,3 +12,14 @@ body {
 h1 {
   font-size: 6rem;
 }
+
+input {
+  font-family: var(--police);
+  border: none;
+  border-bottom: 1px solid white;
+  background: none;
+  color: white;
+  border-radius: 0;
+  padding: 1rem 1.5rem;
+  outline: none;
+}

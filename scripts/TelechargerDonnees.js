@@ -18,13 +18,22 @@ https.get(url, (reponse) => {
   })
 
   reponse.on('end', () => {
-    const donneesFinales = Buffer.concat(donnees)
+    const donneesFinales = JSON.parse(Buffer.concat(donnees).toString()),
+      donneesFinalesRetravaillees = donneesFinales.items.map((item) => {
+        return {
+          id: item.sys.id,
+          nom: item.fields.nom,
+          localisation: item.fields.localisation,
+          adresse: item.fields.adresse,
+          typesDeSurfaces: item.fields.typesDeSurfaces
+        }
+      })
 
     if (!fs.existsSync('data')) {
       fs.mkdirSync('data')
     }
 
-    fs.writeFileSync('data/donnees.json', donneesFinales)
+    fs.writeFileSync('data/donnees.json', JSON.stringify(donneesFinalesRetravaillees))
   })
 }).on("error", (err) => {
   console.log("Error: " + err.message);

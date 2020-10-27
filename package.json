@@ -4,13 +4,12 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "clean": "rm -rf ./public",
-    "prebuild": "npm run clean && node ./scripts/TelechargerDonnees.js",
+    "clean:public": "rm -rf ./public",
+    "clean:data": "rm -rf ./data",
+    "prebuild": "npm run clean:public && npm run clean:data && node ./scripts/TelechargerDonnees.js",
     "build": "eleventy",
-    "postbuild": "rm -rf ./data",
     "prestart": "npm run prebuild",
-    "start": "eleventy --serve",
-    "poststart": "npm run postbuild"
+    "start": "eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0"
