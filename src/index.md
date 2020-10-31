@@ -5,4 +5,4 @@ titre: 'Accueil'
 
 # Je cherche le stade
 
-<input type="text">
+<input type="text" id="recherche">

@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'./src/ressources/': '.'})
+  eleventyConfig.addPassthroughCopy({'./data/donnees.js': './donnees/donnees.js'})
 
   return {
     dir: {

@@ -1,3 +1,9 @@
+@import url('./recherche.css');
+
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -7,6 +13,9 @@ body {
   height: 100vh;
   background: radial-gradient(#424242, #212121);
   color: #fff;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 h1 {

@@ -3,7 +3,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const https = require('https'),
-  fs = require('fs')
+  fs = require('fs'),
+  slugify = require('slugify'),
   SPACE_ID = process.env.CONTENTFUL_SPACE_ID,
   ENVIRONMENT_ID = process.env.CONTENTFUL_ENVIRONMENT_ID,
   DELIVERY_TOKEN = process.env.CONTENTFUL_DELIVERY_TOKEN,
@@ -23,6 +24,7 @@ https.get(url, (reponse) => {
         return {
           id: item.sys.id,
           nom: item.fields.nom,
+          slug: slugify(item.fields.nom, {lower: true}),
           localisation: item.fields.localisation,
           adresse: item.fields.adresse,
           typesDeSurfaces: item.fields.typesDeSurfaces
@@ -34,6 +36,7 @@ https.get(url, (reponse) => {
     }
 
     fs.writeFileSync('data/donnees.json', JSON.stringify(donneesFinalesRetravaillees))
+    fs.writeFileSync('data/donnees.js', `const donnees = ${JSON.stringify(donneesFinalesRetravaillees.map(({slug, nom}) => ({slug, nom})))}`)
   })
 }).on("error", (err) => {
   console.log("Error: " + err.message);

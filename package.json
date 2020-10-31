@@ -8,6 +8,7 @@
     "clean:data": "rm -rf ./data",
     "prebuild": "npm run clean:public && npm run clean:data && node ./scripts/TelechargerDonnees.js",
     "build": "eleventy",
+    "postbuild": "npm run clean:data",
     "prestart": "npm run prebuild",
     "start": "eleventy --serve"
   },
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "slugify": "^1.4.5"
   }
 }

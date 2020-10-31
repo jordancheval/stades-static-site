@@ -8,7 +8,7 @@ class Fiches {
       },
       layout: "fiche",
       permalink: function(data) {
-        return `/stades/${this.slug(data.stade.nom)}/`
+        return `/stades/${data.stade.slug}/`
       },
       eleventyComputed: {
         titre: (data) => data.stade.nom
