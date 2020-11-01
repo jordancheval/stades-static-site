@@ -4,12 +4,12 @@ div#resulats-recherche:not(:empty) {
   width: 100%;
   gap: 1rem;
   padding: 2rem;
+  font-size: 1.6rem;
   overflow: auto;
 }
 
 div#resulats-recherche a {
   color: var(--couleur-ecriture-variante-1);
-  font-size: 1.6rem;
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 0.4rem;

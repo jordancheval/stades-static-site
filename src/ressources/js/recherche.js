@@ -38,9 +38,11 @@ class Recherche {
    */
   preparerRecepetionMessagesWorker(worker) {
     worker.onmessage = (message) => {
+      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="stades/${slug}">${nom}</a>`).join('')}` : 'Aucun résultat'
+
       this.conteneurResultat.innerHTML = ''
 
-      this.conteneurResultat.insertAdjacentHTML('afterbegin', `${message.data.map(({slug, nom}) => `<a href="stades/${slug}">${nom}</a>`).join('')}`)
+      this.conteneurResultat.insertAdjacentHTML('afterbegin', html)
     }
   }
 
