@@ -1,7 +1,7 @@
 :root {
   --police: 'Segoe UI', sans-serif;
 
-  --couleur-ecriture: #000000;
+  --couleur-ecriture: #191919;
   --couleur-ecriture-variante-1: #292E2F;
 
   --couleur-fond: #FFFFFF;
@@ -28,7 +28,7 @@ html {
     --couleur-ecriture: #FFFFFF;
     --couleur-ecriture-variante-1: #EEEFE9;
 
-    --couleur-fond: #000000;
+    --couleur-fond: #191919;
     --couleur-fond-variante-1: #292E2F;
 
     --couleur-accent-1: #4CB4CC;
