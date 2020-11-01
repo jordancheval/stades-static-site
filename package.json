@@ -7,7 +7,7 @@
     "clean:public": "rm -rf ./public",
     "clean:data": "rm -rf ./data",
     "prebuild": "npm run clean:public && npm run clean:data && node ./scripts/TelechargerDonnees.js",
-    "build": "eleventy",
+    "build": "npx @11ty/eleventy",
     "postbuild": "npm run clean:data",
     "prestart": "npm run prebuild",
     "start": "eleventy --serve"
