@@ -1,0 +1,38 @@
+:root {
+  --police: 'Segoe UI', sans-serif;
+
+  --couleur-ecriture: #000000;
+  --couleur-ecriture-variante-1: #292E2F;
+
+  --couleur-fond: #FFFFFF;
+  --couleur-fond-variante-1: #EEEFE9;
+
+  --couleur-accent-1: #00738E;
+  --couleur-rouge: #F44336;
+  --couleur-vert: #6DA65D;
+
+  font-family: var(--police);
+  font-size: 10px;
+}
+
+html {
+  background-color: var(--couleur-fond);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --couleur-ecriture: #FFFFFF;
+    --couleur-ecriture-variante-1: #EEEFE9;
+
+    --couleur-fond: #000000;
+    --couleur-fond-variante-1: #292E2F;
+
+    --couleur-accent-1: #4CB4CC;
+    --couleur-rouge: #FE5043;
+    --couleur-vert: #87D770;
+  }
+}
