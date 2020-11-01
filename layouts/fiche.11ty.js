@@ -9,16 +9,16 @@ class Fiche {
     const champs = data.stade
 
     return `
-    <h1>${champs.nom}</h1>
+    <h1><a class="retour" href="/"></a>${champs.nom}</h1>
     <div class="bloc-info">
-      <span class="titre">Adresse</span>
-      <span>${champs.adresse}</span>
-    </div>
-    <div class="bloc-info">
-      <span class="titre">${champs.typesDeSurfaces.length > 1 ? 'Types de surfaces' : 'Type de surface'}</span>
-      <span>${champs.typesDeSurfaces.join(' - ')}</span>
-    </div>
-    <div>
+      <div class="adresse">
+        <span class="titre">Adresse</span>
+        <span>${champs.adresse}</span>
+      </div>
+      <div class="terrains">
+        <span class="titre">${champs.typesDeSurfaces.length > 1 ? 'Types de surfaces' : 'Type de surface'}</span>
+        <span>${champs.typesDeSurfaces.join(' - ')}</span>
+      </div>
       <a href="https://maps.google.com/maps?q=loc:${champs.localisation.lat},${champs.localisation.lon}&z=17&t=h&hl=fr-FR&gl=US&mapclient=embed" target="_blank">Ouvrir sur Maps</a>
     </div>
     <div class="carte">
