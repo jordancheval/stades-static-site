@@ -38,7 +38,7 @@ class Recherche {
    */
   preparerRecepetionMessagesWorker(worker) {
     worker.onmessage = (message) => {
-      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="stades/${slug}">${nom}</a>`).join('')}` : 'Aucun résultat'
+      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="stades/${slug}">${nom}</a>`).join('')}` : '<span>Aucun résultat</span>'
 
       this.conteneurResultat.innerHTML = ''
 

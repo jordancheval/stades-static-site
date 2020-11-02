@@ -2,16 +2,21 @@ div#resulats-recherche:not(:empty) {
   display: flex;
   flex-direction: column;
   width: 100%;
+  row-gap: 1rem;
   gap: 1rem;
   padding: 2rem;
   font-size: 1.6rem;
   overflow: auto;
 }
 
+div#resulats-recherche a,
+div#resulats-recherche span {
+  padding: 1rem 2rem;
+}
+
 div#resulats-recherche a {
   color: var(--couleur-ecriture-variante-1);
   text-decoration: none;
-  padding: 1rem 2rem;
   border-radius: 0.4rem;
   background-color: transparent;
   transition: background-color .2s ease-in-out, color .2s ease-in-out;
