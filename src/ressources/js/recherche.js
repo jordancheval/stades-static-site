@@ -23,6 +23,12 @@ class Recherche {
    * @param {HTMLInputElement} input - l'élément de saisie de texte
    */
   preparerInputPourEnvoiDeMessages(input) {
+    input.onkeydown = (evenement) => {
+      if (!evenement.key.match(new RegExp('[\\w\\d\\u00C0-\\u00FF\\.-]'))) {
+        evenement.preventDefault()
+      }
+    }
+
     input.oninput = () => {
       if (input.value.length > 2) {
         this.worker.postMessage(input.value)
