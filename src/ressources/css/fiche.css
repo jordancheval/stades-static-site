@@ -111,11 +111,16 @@ div.carte iframe {
 }
 
 @media (max-width: 1099px) {
+  @supports (not(row-gap: 1.4rem)) and (not(gap: 1.4rem)) {
+    body > *:not(:last-child) {
+      margin-bottom: 1.4rem;
+    }
+  }
+
   body {
     display: flex;
     min-height: -webkit-fill-available;
     flex-direction: column;
-    column-gap: 1.4rem;
     row-gap: 1.4rem;
     gap: 1.4rem;
   }
