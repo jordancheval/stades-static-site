@@ -9,6 +9,8 @@ body {
   min-height: 100vh;
   grid-template-columns: 1fr 60vw;
   grid-template-rows: repeat(2, auto) 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
   gap: 1rem;
   color: var(--couleur-ecriture);
 }
@@ -36,6 +38,8 @@ div.bloc-info {
   grid-column: 1;
   display: flex;
   flex-direction: column;
+  column-gap: 2rem;
+  row-gap: 2rem;
   gap: 2rem;
   border-radius: 0.6rem;
   padding: 1rem;
@@ -51,7 +55,7 @@ div.bloc-info > div {
   grid-template-columns: auto 1fr;
   column-gap: 1rem;
   width: 100%;
-  align-items: baseline;
+  align-items: center;
 }
 
 div.bloc-info > div::before {
@@ -79,6 +83,7 @@ div.bloc-info .titre {
   font-size: calc(var(--taille-police) + 0.6rem);
   font-weight: 300;
   color: var(--couleur-accent-1);
+  user-select: none;
 }
 
 div.bloc-info > a {
@@ -110,11 +115,15 @@ div.carte iframe {
     display: flex;
     min-height: -webkit-fill-available;
     flex-direction: column;
-    gap: 1.4rem;
+  }
+
+  body > *:not(:first-child) {
+    margin-top: 1.4rem;
   }
 
   h1 {
     font-size: 2.8rem;
+    margin-bottom: 0;
   }
 
   h1 > a.retour {
@@ -140,12 +149,16 @@ div.carte iframe {
 }
 
 @media (max-width: 767px) {
-  h1 {
-    margin: 0;
+  body > h1:first-of-type {
+    margin-top: 0.8rem;
   }
 
   div.bloc-info {
     flex-direction: column;
+  }
+
+  div.bloc-info > *:not(:first-child) {
+    margin-top: 1.4rem;
   }
 }
 
