@@ -11,12 +11,12 @@ class Fiche {
 
     return `
     <div class="entete">
-      <a class="retour" href="/"></a>
+      <a class="retour" href="/" aria-label="Retour à la page d'accueil"></a>
       <h1>${nom}</h1>
-      <button class="ouvrir-recherche"></button>
+      <button class="ouvrir-recherche" aria-label="Ouvrir la recherche"></button>
       <div class="calque-recherche">
-        <button class="fermer-recherche"></button>
-        <input type="text" id="recherche" placeholder="Tapez le nom d'un stade, d'un club, d'une ville...">
+        <button class="fermer-recherche" aria-label="Fermer la recherche"></button>
+        <input type="text" id="recherche" placeholder="Tapez le nom d'un stade, d'un club, d'une ville..." aria-label="Champ de recherche">
       </div>
     </div>
     <div class="bloc-info">
@@ -28,16 +28,12 @@ class Fiche {
         <span class="titre">${typesDeSurfaces.length > 1 ? 'Types de surfaces' : 'Type de surface'}</span>
         <span>${typesDeSurfaces.join(' - ')}</span>
       </div>
-      <a href="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&hl=fr-FR&gl=US&mapclient=embed" target="_blank">Ouvrir sur Maps</a>
+      <a href="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&hl=fr-FR&gl=US&mapclient=embed" target="_blank" rel="noreferrer">Ouvrir sur Maps</a>
     </div>
     <div class="carte">
-      <iframe src="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&output=embed" frameborder="0" loading="lazy"></iframe>
+      <iframe title="Carte Google Maps" src="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&output=embed" frameborder="0" loading="lazy"></iframe>
     </div>
     <link rel="stylesheet" href="${this.url('/css/fiche.css')}">
-    <script src="${this.url('/js/recherche.js')}"></script>
-      <script>
-        const recherche = new Recherche(document.querySelector('#recherche'))
-      </script>
     <script>
       const titreAdresse = document.querySelector('div.adresse span.titre'),
         boutonOuvrirRecherche = document.querySelector('.ouvrir-recherche'),

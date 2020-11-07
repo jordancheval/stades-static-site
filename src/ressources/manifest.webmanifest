@@ -1,0 +1,27 @@
+
+{
+  "manifest_version": 1,
+  "version": "0.0.1",
+  "name": "Stades",
+  "short_name": "Stades",
+  "description": "Permet de chercher l'emplacement d'un stade parmis ceux référencés.",
+  "default_locale": "fr",
+  "icons": [
+    {
+      "src": "./images/logo/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "./images/logo/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#139400",
+  "theme_color": "#139400"
+}

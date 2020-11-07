@@ -21,3 +21,13 @@ h1 {
   font-size: 6rem;
   margin: 0 0 3rem 0;
 }
+
+p {
+  font-size: 3rem;
+}
+
+@media (max-width: 767px) {
+  p {
+    font-size: 2rem;
+  }
+}
