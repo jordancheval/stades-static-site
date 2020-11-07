@@ -6,7 +6,7 @@ class Recherche {
    */
   constructor(input) {
     if (window.Worker) {
-      this.worker = new Worker('js/worker.js')
+      this.worker = new Worker(`${window.location.origin}/js/worker.js`)
       this.conteneurResultat = this.creerConteneurResultats()
 
       input.insertAdjacentElement('afterend', this.conteneurResultat)
@@ -44,7 +44,7 @@ class Recherche {
    */
   preparerRecepetionMessagesWorker(worker) {
     worker.onmessage = (message) => {
-      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="stades/${slug}">${nom}</a>`).join('')}` : '<span>Aucun résultat</span>'
+      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="/stades/${slug}">${nom}</a>`).join('')}` : '<span>Aucun résultat</span>'
 
       this.conteneurResultat.innerHTML = ''
 

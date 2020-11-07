@@ -1,4 +1,8 @@
+@import url('./recherche.css');
+
 html {
+  --taille-icone: 4.2rem;
+
   height: -webkit-fill-available;
 }
 
@@ -15,21 +19,67 @@ body {
   color: var(--couleur-ecriture);
 }
 
-h1 {
-  font-size: 4rem;
-  grid-column: span 2;
+div.entete {
   display: flex;
   align-items: center;
+  grid-column: span 2;
 }
 
-h1 > a.retour {
+div.entete > h1 {
+  font-size: 4rem;
+  flex: 1;
+}
+
+div.entete > a.retour {
   display: inline-block;
   background-image: url('../images/chevron-gauche.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: var(--taille-icone);
+  height: var(--taille-icone);
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+div.entete button {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: var(--taille-icone);
+  height: var(--taille-icone);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+div.entete > button.ouvrir-recherche {
+  background-image: url('../images/recherche.svg');
+  margin-left: 1rem;
+}
+
+div.entete > div.calque-recherche {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--couleur-fond);
+  opacity: 0.97;
+  z-index: 1;
+}
+
+div.entete > div.calque-recherche.visible {
+  visibility: visible;
+}
+
+div.entete > div.calque-recherche > button.fermer-recherche {
+  background-image: url('../images/croix.svg');
+  margin-bottom: 1rem;
+  align-self: flex-end;
 }
 
 div.bloc-info {
@@ -111,6 +161,10 @@ div.carte iframe {
 }
 
 @media (max-width: 1099px) {
+  html {
+    --taille-icone: 3.2rem;
+  }
+
   body {
     display: flex;
     min-height: -webkit-fill-available;
@@ -121,14 +175,14 @@ div.carte iframe {
     margin-top: 1.4rem;
   }
 
-  h1 {
+  div.entete > h1 {
     font-size: 2.8rem;
-    margin-bottom: 0;
+    margin: 0;
   }
 
-  h1 > a.retour {
-    width: 3.2rem;
-    height: 3.2rem;
+  div.entete > a.retour {
+    width: var(--taille-icone);
+    height: var(--taille-icone);
   }
 
   div.bloc-info {
@@ -149,10 +203,6 @@ div.carte iframe {
 }
 
 @media (max-width: 767px) {
-  body > h1:first-of-type {
-    margin-top: 0.8rem;
-  }
-
   div.bloc-info {
     flex-direction: column;
   }
@@ -163,7 +213,9 @@ div.carte iframe {
 }
 
 @media (prefers-color-scheme: dark) {
-  h1 > a.retour,
+  div.entete > a.retour,
+  div.entete > button.ouvrir-recherche,
+  div.entete > div.calque-recherche > button.fermer-recherche,
   div.bloc-info > div::before {
     filter: invert(1);
   }
