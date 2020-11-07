@@ -27,16 +27,17 @@ https.get(url, (reponse) => {
           slug: slugify(item.fields.nom, {lower: true}),
           localisation: item.fields.localisation,
           adresse: item.fields.adresse,
-          typesDeSurfaces: item.fields.typesDeSurfaces
+          typesDeSurfaces: item.fields.typesDeSurfaces,
+          tags: item.fields.tags ? item.fields.tags : []
         }
-      })
+      }).sort((a, b) => a.nom.localeCompare(b.nom))
 
     if (!fs.existsSync('data')) {
       fs.mkdirSync('data')
     }
 
     fs.writeFileSync('data/donnees.json', JSON.stringify(donneesFinalesRetravaillees))
-    fs.writeFileSync('data/donnees.js', `const donnees = ${JSON.stringify(donneesFinalesRetravaillees.map(({slug, nom}) => ({slug, nom})))}`)
+    fs.writeFileSync('data/donnees.js', `const donnees = ${JSON.stringify(donneesFinalesRetravaillees.map(({slug, nom, tags}) => ({slug, nom, tags})))}`)
   })
 }).on("error", (err) => {
   console.log("Error: " + err.message);
