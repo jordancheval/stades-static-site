@@ -12,11 +12,9 @@
     "prestart": "npm run prebuild",
     "start": "eleventy --serve"
   },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
-  },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "@11ty/eleventy": "^0.11.0",
     "eleventy-plugin-pwa": "^1.0.8",
     "install": "^0.13.0",
     "slugify": "^1.4.5"
