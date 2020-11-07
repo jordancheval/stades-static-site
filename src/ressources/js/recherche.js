@@ -24,7 +24,7 @@ class Recherche {
    */
   preparerInputPourEnvoiDeMessages(input) {
     input.onkeydown = (evenement) => {
-      if (!evenement.key.match(new RegExp('[\\w\\d\\u00C0-\\u00FF\\.-]'))) {
+      if (!evenement.key.match(new RegExp('[\\w\\d\\u00C0-\\u00FF\\.-\\s]'))) {
         evenement.preventDefault()
       }
     }
@@ -44,7 +44,7 @@ class Recherche {
    */
   preparerRecepetionMessagesWorker(worker) {
     worker.onmessage = (message) => {
-      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="/stades/${slug}">${nom}</a>`).join('')}` : '<span>Aucun résultat</span>'
+      const html = message.data.length > 0 ? `${message.data.map(({slug, nom}) => `<a href="/stades/${slug}/">${nom}</a>`).join('')}` : '<span>Aucun résultat</span>'
 
       this.conteneurResultat.innerHTML = ''
 
