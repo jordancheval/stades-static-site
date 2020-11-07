@@ -21,18 +21,3 @@ h1 {
   font-size: 6rem;
   margin: 0 0 3rem 0;
 }
-
-input {
-  font-family: var(--police);
-  border: none;
-  border-radius: 0.6rem;
-  background: var(--couleur-fond-variante-1);
-  color: var(--couleur-ecriture);
-  border-radius: 0.6rem;
-  padding: 1rem 1.5rem;
-  outline: none;
-}
-
-input::placeholder {
-  color: var(--couleur-ecriture);
-}
