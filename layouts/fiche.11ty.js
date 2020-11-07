@@ -34,10 +34,6 @@ class Fiche {
       <iframe src="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&output=embed" frameborder="0" loading="lazy"></iframe>
     </div>
     <link rel="stylesheet" href="${this.url('/css/fiche.css')}">
-    <script src="${this.url('/js/recherche.js')}"></script>
-      <script>
-        const recherche = new Recherche(document.querySelector('#recherche'))
-      </script>
     <script>
       const titreAdresse = document.querySelector('div.adresse span.titre'),
         boutonOuvrirRecherche = document.querySelector('.ouvrir-recherche'),
