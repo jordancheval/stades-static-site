@@ -47,6 +47,8 @@ div.entete button {
   background-repeat: no-repeat;
   width: var(--taille-icone);
   height: var(--taille-icone);
+  min-width: var(--taille-icone);
+  min-height: var(--taille-icone);
   border: none;
   cursor: pointer;
   background-color: transparent;
