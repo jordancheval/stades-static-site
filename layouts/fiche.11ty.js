@@ -60,5 +60,3 @@ class Fiche {
 }
 
 module.exports = Fiche
-
-// <iframe src="https://maps.google.com/maps?q=loc:${champs.localisation.lat},${champs.localisation.lon}&z=17&t=h&output=embed" frameborder="0"></iframe>
