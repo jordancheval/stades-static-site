@@ -6,6 +6,10 @@ html {
   height: -webkit-fill-available;
 }
 
+html.fixe {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 1rem;
@@ -68,14 +72,16 @@ div.entete > div.calque-recherche {
   right: 0;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--couleur-fond);
-  opacity: 0.97;
+  opacity: 0;
   z-index: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 div.entete > div.calque-recherche.visible {
   visibility: visible;
+  opacity: 1;
 }
 
 div.entete > div.calque-recherche > button.fermer-recherche {

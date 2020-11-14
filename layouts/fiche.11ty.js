@@ -45,12 +45,14 @@ class Fiche {
       })
 
       boutonOuvrirRecherche.addEventListener('click', () => {
+        document.querySelector('html').classList.add('fixe')
         calqueRecherche.classList.add('visible')
         calqueRecherche.querySelector('input').focus()
       })
 
       boutonFermerRecherche.addEventListener('click', () => {
         calqueRecherche.classList.remove('visible')
+        document.querySelector('html').classList.remove('fixe')
       })
     </script>
     `
