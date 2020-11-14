@@ -2,7 +2,7 @@
   "name": "stades-static-site",
   "description": "Site statique d'annuaire de stades",
   "private": true,
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "scripts": {
     "clean:public": "rm -rf ./public",
     "clean:data": "rm -rf ./data",
