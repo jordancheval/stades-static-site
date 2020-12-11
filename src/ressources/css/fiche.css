@@ -116,7 +116,7 @@ div.bloc-info > div {
   align-items: center;
 }
 
-div.bloc-info > div::before {
+div.bloc-info > div:not(:last-of-type)::before {
   content: '';
   display: inline-block;
   background-size: contain;
@@ -144,9 +144,16 @@ div.bloc-info .titre {
   user-select: none;
 }
 
-div.bloc-info > a {
+div.bloc-info > div.liens-cartes {
   grid-column: 1;
-  display: inline-block;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+div.bloc-info > div.liens-cartes > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: var(--couleur-accent-1);
   text-align: center;
@@ -155,6 +162,35 @@ div.bloc-info > a {
   color: var(--couleur-fond);
   text-decoration: none;
   font-size: var(--taille-police);
+}
+
+div.bloc-info > div.liens-cartes > a > span.icone-lien {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--couleur-fond);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+div.bloc-info > div.liens-cartes > a > span.icone-lien.google-maps {
+  -webkit-mask-image: url('../images/google_maps_monochrome.svg');
+  mask-image: url('../images/google_maps_monochrome.svg');
+}
+
+div.bloc-info > div.liens-cartes > a > span.icone-lien.apple-plans {
+  -webkit-mask-image: url('../images/apple_plans_monochrome.svg');
+  mask-image: url('../images/apple_plans_monochrome.svg');
+}
+
+div.bloc-info > div.liens-cartes > a > span.icone-lien.waze {
+  -webkit-mask-image: url('../images/waze_monochrome.svg');
+  mask-image: url('../images/waze_monochrome.svg');
 }
 
 div.carte {
@@ -197,6 +233,18 @@ div.carte iframe {
     --taille-police: 1.6rem;
 
     flex-direction: initial;
+  }
+
+  div.bloc-info > div.liens-cartes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  div.bloc-info > div.liens-cartes > a > span.icone-lien {
+    margin: 0;
+  }
+
+  div.bloc-info > div.liens-cartes > a > span.texte {
+    display: none;
   }
 
   div.carte {

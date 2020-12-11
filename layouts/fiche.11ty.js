@@ -28,7 +28,20 @@ class Fiche {
         <span class="titre">${typesDeSurfaces.length > 1 ? 'Types de surfaces' : 'Type de surface'}</span>
         <span>${typesDeSurfaces.join(' - ')}</span>
       </div>
-      <a href="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&hl=fr-FR&gl=US&mapclient=embed" target="_blank" rel="noreferrer">Ouvrir sur Maps</a>
+      <div class="liens-cartes">
+        <a href="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&hl=fr-FR&gl=US&mapclient=embed" target="_blank" rel="noreferrer" aria-label="Ouvrir sur Google Maps">
+          <span class="icone-lien google-maps"></span>
+          <span class="texte">Ouvrir sur Google Maps</span>
+        </a>
+        <a href="https://maps.apple.com/?ll=${localisation.lat},${localisation.lon}" target="_blank" rel="noreferrer" aria-label="Ouvrir sur Apple Plan">
+          <span class="icone-lien apple-plans"></span>
+          <span class="texte">Ouvrir sur Apple Plans</span>
+        </a>
+        <a href="https://waze.com/ul?ll=${localisation.lat},${localisation.lon}" target="_blank" rel="noreferrer" aria-label="Ouvrir sur Waze">
+          <span class="icone-lien waze"></span>
+          <span class="texte">Ouvrir sur Waze</span>
+        </a>
+      </div>
     </div>
     <div class="carte">
       <iframe title="Carte Google Maps" src="https://maps.google.com/maps?q=loc:${localisation.lat},${localisation.lon}&z=17&t=h&output=embed" frameborder="0" loading="lazy"></iframe>
