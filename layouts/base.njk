@@ -4,21 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{ titre }} | Stades</title>
-  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <meta name="theme-color" content="#139400"/>
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="shortcut icon" href="/images/logo/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/images/logo/logo_192.png">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
   {{ content | safe }}
+  <link rel="preload" href="{{ '/css/popup-mise-a-jour.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/css/popup-mise-a-jour.css' | url }}"></noscript>
+  <script src="{{ '/js/miseAJour.js' | url }}"></script>
 </body>
-<script src="{{ '/js/recherche.js' | url }}"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js")
-}
-
-const recherche = new Recherche(document.querySelector('#recherche'))
-</script>
 </html>
