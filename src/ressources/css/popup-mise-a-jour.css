@@ -1,0 +1,64 @@
+@keyframes apparitionBasVersHautFondu {
+  from {
+    bottom: -1rem;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 1rem;
+    opacity: 1;
+  }
+}
+
+.popup-mise-a-jour {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10000;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 40rem;
+  margin: auto;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  background-color: var(--accent-80);
+  animation: apparitionBasVersHautFondu 0.4s ease;
+}
+
+.popup-mise-a-jour > p {
+  font-size: inherit;
+  text-align: center;
+  color: var(--gris-0);
+}
+
+.popup-mise-a-jour button.rechargement {
+  background-color: var(--accent-20);
+  color: var(--accent-90);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-family: var(--police);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-mise-a-jour button.fermeture {
+  --popup-taille-icone-fermeture: 1.6rem;
+
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  width: var(--popup-taille-icone-fermeture);
+  height: var(--popup-taille-icone-fermeture);
+  background-color: var(--accent-20);
+  cursor: pointer;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url('../images/croix.svg');
+  mask-image: url('../images/croix.svg');
+}

@@ -1,15 +1,44 @@
 :root {
   --police: 'Segoe UI', sans-serif;
 
-  --couleur-ecriture: #191919;
-  --couleur-ecriture-variante-1: #292E2F;
+  --accent-hue: 113;
+  --accent-saturation: 100%;
 
-  --couleur-fond: #FFFFFF;
-  --couleur-fond-variante-1: #EEEFE9;
+  --accent-base: var(--accent-hue), var(--accent-saturation);
+  --accent-0: hsl(var(--accent-base), 100%);
+  --accent-10: hsl(var(--accent-base), 90%);
+  --accent-20: hsl(var(--accent-base), 80%);
+  --accent-30: hsl(var(--accent-base), 70%);
+  --accent-40: hsl(var(--accent-base), 60%);
+  --accent-50: hsl(var(--accent-base), 50%);
+  --accent-60: hsl(var(--accent-base), 40%);
+  --accent-70: hsl(var(--accent-base), 30%);
+  --accent-80: hsl(var(--accent-base), 20%);
+  --accent-90: hsl(var(--accent-base), 10%);
+  --accent-100: hsl(var(--accent-base), 0%);
 
-  --couleur-accent-1: #00738E;
-  --couleur-rouge: #F44336;
-  --couleur-vert: #6DA65D;
+  --gris-base: var(--accent-hue), 10%;
+  --gris-0: hsl(var(--gris-base), 100%);
+  --gris-10: hsl(var(--gris-base), 90%);
+  --gris-20: hsl(var(--gris-base), 80%);
+  --gris-30: hsl(var(--gris-base), 70%);
+  --gris-40: hsl(var(--gris-base), 60%);
+  --gris-50: hsl(var(--gris-base), 50%);
+  --gris-60: hsl(var(--gris-base), 40%);
+  --gris-70: hsl(var(--gris-base), 30%);
+  --gris-80: hsl(var(--gris-base), 20%);
+  --gris-90: hsl(var(--gris-base), 10%);
+  --gris-100: hsl(var(--gris-base), 0%);
+
+  --couleur-ecriture: var(--gris-90);
+  --couleur-ecriture-variante-1: var(--gris-80);
+
+  --couleur-fond: var(--gris-0);
+  --couleur-fond-variante-1: var(--gris-10);
+
+  --couleur-accent-1: var(--accent-70);
+
+  --border-radius: 0.4rem;
 
   font-family: var(--police);
   font-size: 10px;
@@ -25,14 +54,12 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --couleur-ecriture: #FFFFFF;
-    --couleur-ecriture-variante-1: #EEEFE9;
+    --couleur-ecriture: var(--gris-0);
+    --couleur-ecriture-variante-1: var(--gris-10);
 
-    --couleur-fond: #191919;
-    --couleur-fond-variante-1: #292E2F;
+    --couleur-fond: var(--gris-90);
+    --couleur-fond-variante-1: var(--gris-80);
 
-    --couleur-accent-1: #4CB4CC;
-    --couleur-rouge: #FE5043;
-    --couleur-vert: #87D770;
+    --couleur-accent-1: var(--accent-20);
   }
 }
