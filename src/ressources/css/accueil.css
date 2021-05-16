@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: clamp(1rem, 9vw, 6rem);
   margin: 0 0 3rem 0;
 }
 
