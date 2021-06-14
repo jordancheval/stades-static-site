@@ -42,7 +42,7 @@ div.liens {
   align-self: center;
   padding: 1rem 1rem 0 1rem;
   font-size: 1.4rem;
-  color: var(--gris-20);
+  color: var(--couleur-ecriture);
 }
 
 div.liens > a {
