@@ -16,12 +16,38 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: clamp(1rem, 9vw, 6rem);
   margin: 0 0 3rem 0;
 }
 
 p {
   font-size: 3rem;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--couleur-accent-1);
+  text-align: center;
+  border-radius: 0.6rem;
+  border: none;
+  padding: 1rem;
+  color: var(--couleur-fond);
+  text-decoration: none;
+  font-size: var(--taille-police);
+}
+
+div.liens {
+  align-self: center;
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1.4rem;
+  color: var(--couleur-ecriture);
+}
+
+div.liens > a {
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
