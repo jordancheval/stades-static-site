@@ -148,7 +148,8 @@ div.bloc-info > div.liens-cartes {
   gap: 1rem;
 }
 
-div.bloc-info > div.liens-cartes > a {
+div.bloc-info > div.liens-cartes > a,
+div.bloc-info button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +157,7 @@ div.bloc-info > div.liens-cartes > a {
   background-color: var(--couleur-accent-1);
   text-align: center;
   border-radius: 0.6rem;
+  border: none;
   padding: 1rem;
   color: var(--couleur-fond);
   text-decoration: none;

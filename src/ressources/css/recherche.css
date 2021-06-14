@@ -13,6 +13,10 @@ input#recherche::placeholder {
   color: var(--couleur-ecriture);
 }
 
+div#resulats-recherche {
+  flex: 1;
+}
+
 div#resulats-recherche:not(:empty) {
   display: flex;
   flex-direction: column;
