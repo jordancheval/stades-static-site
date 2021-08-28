@@ -54,11 +54,25 @@ class Fiche {
       const titreAdresse = document.querySelector('div.adresse span.titre'),
         boutonOuvrirRecherche = document.querySelector('.ouvrir-recherche'),
         boutonFermerRecherche = document.querySelector('.fermer-recherche'),
-        calqueRecherche = document.querySelector('.calque-recherche')
+        calqueRecherche = document.querySelector('.calque-recherche'),
+        fonctionCopieLienMaps = () => {
+          navigator.clipboard.writeText('${lienMaps}').then(() => {
+            titreAdresse.classList.add('copie')
+            setTimeout(() => {
+              titreAdresse.classList.remove('copie')
+            }, 2000)
+          })
+        }
 
-      titreAdresse.addEventListener('dblclick', () => {
-        navigator.clipboard.writeText('${lienMaps}')
+      let timeoutCopieLienMaps = null
+
+      titreAdresse.addEventListener('dblclick', fonctionCopieLienMaps)
+      titreAdresse.addEventListener('touchstart', () => {
+        timeoutCopieLienMaps = setTimeout(fonctionCopieLienMaps, 1000)
       })
+      titreAdresse.addEventListener('touchmove',() => clearTimeout(timeoutCopieLienMaps))
+      titreAdresse.addEventListener('touchend',() => clearTimeout(timeoutCopieLienMaps))
+      titreAdresse.addEventListener('touchcancel',() => clearTimeout(timeoutCopieLienMaps))
 
       boutonOuvrirRecherche.addEventListener('click', () => {
         document.querySelector('html').classList.add('fixe')
