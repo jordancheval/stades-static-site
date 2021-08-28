@@ -139,6 +139,7 @@ div.bloc-info .titre {
   font-size: calc(var(--taille-police) + 0.6rem);
   font-weight: 300;
   color: var(--couleur-accent-1);
+  -webkit-user-select: none;
   user-select: none;
 }
 
