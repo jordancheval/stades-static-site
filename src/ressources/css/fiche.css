@@ -142,6 +142,10 @@ div.bloc-info .titre {
   user-select: none;
 }
 
+div.bloc-info .titre.copie::after {
+  content: ' - lien copié';
+}
+
 div.bloc-info > div.liens-cartes {
   grid-column: 1;
   grid-template-columns: 1fr;
