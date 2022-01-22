@@ -1,5 +1,3 @@
-const pluginPWA = require("eleventy-plugin-pwa")
-
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(false)
 
