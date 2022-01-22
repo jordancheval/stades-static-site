@@ -7,9 +7,10 @@
     "clean:public": "rm -rf ./public",
     "clean:data": "rm -rf ./data",
     "prebuild": "npm run clean:public && npm run clean:data && node ./scripts/TelechargerDonnees.js",
-    "build": "npx @11ty/eleventy && npx workbox generateSW workbox-config.js",
+    "build:sw": "npx workbox generateSW workbox-config.js",
+    "build": "npx @11ty/eleventy && npm run build:sw",
     "postbuild": "npm run clean:data",
-    "prestart": "npm run prebuild && npx @11ty/eleventy && npx workbox generateSW workbox-config.js",
+    "prestart": "npm run prebuild && npx @11ty/eleventy && npm run build:sw",
     "start": "eleventy --serve",
     "debug": "set DEBUG=Eleventy* && npm run build"
   },

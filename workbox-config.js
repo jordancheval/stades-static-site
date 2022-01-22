@@ -1,4 +1,5 @@
 module.exports = {
+  cacheId: 'stades',
   globDirectory: 'public/',
   globPatterns: [
     '**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}'
