@@ -2,21 +2,24 @@
   "name": "stades-static-site",
   "description": "Site statique d'annuaire de stades",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "clean:public": "rm -rf ./public",
     "clean:data": "rm -rf ./data",
     "prebuild": "npm run clean:public && npm run clean:data && node ./scripts/TelechargerDonnees.js",
-    "build": "npx @11ty/eleventy",
+    "build:sw": "npx workbox generateSW workbox-config.js",
+    "build": "npx @11ty/eleventy && npm run build:sw",
     "postbuild": "npm run clean:data",
-    "prestart": "npm run prebuild",
-    "start": "eleventy --serve"
+    "prestart": "npm run prebuild && npx @11ty/eleventy && npm run build:sw",
+    "start": "eleventy --serve",
+    "debug": "set DEBUG=Eleventy* && npm run build"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "dotenv": "^10.0.0",
     "eleventy-plugin-pwa": "^1.0.8",
     "install": "^0.13.0",
-    "slugify": "^1.6.0"
+    "slugify": "^1.6.5",
+    "workbox-cli": "^6.4.2"
   }
 }
