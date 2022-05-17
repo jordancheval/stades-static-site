@@ -38,12 +38,14 @@ div#resulats-recherche a {
   text-decoration: none;
   border-radius: 0.4rem;
   background-color: transparent;
-  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+  transition: background-color .1s ease-in-out, color .1s ease-in-out;
 }
 
-div#resulats-recherche a:hover {
+div#resulats-recherche a:hover,
+div#resulats-recherche a:focus-visible {
   color: var(--couleur-ecriture);
   background-color: var(--couleur-fond-variante-1);
+  outline: none;
 }
 
 @media (max-width: 767px) {
