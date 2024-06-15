@@ -55,8 +55,15 @@ class TelechargerDonnees {
    * Permet de construire les données
    */
   async construireDonnees() {
-    const donneesBrutes = await this.telecharger(`${URL}&skip=${this.donnees.length}`),
-      donneesRecuperees = JSON.parse(Buffer.concat(donneesBrutes).toString()),
+    let donneesBrutes = null
+
+    try {
+      donneesBrutes = await this.telecharger(`${URL}&skip=${this.donnees.length}`)
+    } catch (erreur) {
+      throw new Error(erreur)
+    }
+
+    const donneesRecuperees = JSON.parse(Buffer.concat(donneesBrutes).toString()),
       donneesRecupereesRetravaillees = donneesRecuperees.items.map((item) => {
         return {
           id: item.sys.id,
